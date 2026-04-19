@@ -89,8 +89,8 @@
             <!-- BRANDING LOGO -->
             <a href="<?php echo home_url('/'); ?>" class="flex flex-col items-center hover:opacity-90 transition-opacity z-10">
                 <div class="text-3xl font-bold font-title tracking-tight flex items-baseline leading-none drop-shadow-md">
-                    <span class="text-white">Custom</span>
-                    <span class="text-custom-primary">Isiones</span>
+                    <span class="text-white">CustoM</span>
+                    <span class="text-custom-accent">isiones</span>
                 </div>
                 <div class="text-[0.65rem] tracking-[0.3em] font-medium text-custom-subtext dark:text-custom-darktext/70 uppercase text-center mt-1 w-full relative flex items-center justify-center">
                     <span class="h-px bg-custom-subtext/30 flex-grow mx-2 dark:bg-custom-darktext/20"></span>

@@ -1,0 +1,12 @@
+{
+  "name": "customisiones-theme",
+  "version": "1.0.0",
+  "description": "Tailwind setup for Customisiones Theme",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/css/input.css -o ./assets/css/output.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./assets/css/output.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

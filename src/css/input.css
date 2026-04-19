@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Animación estilo react-toggle-dark-mode */
+.theme-toggle-svg {
+  transition: transform 0.5s ease;
+}
+.theme-toggle-svg .moon-mask-hole {
+  transition: cx 0.5s ease, cy 0.5s ease;
+}
+.theme-toggle-svg .sun-core {
+  transition: r 0.5s ease;
+}
+.theme-toggle-svg .sun-rays {
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transform-origin: center;
+}
+
+/* Estado Light (Sol) */
+.theme-toggle-svg {
+  transform: rotate(90deg);
+}
+.theme-toggle-svg .moon-mask-hole {
+  cx: 24px;
+  cy: 0px;
+}
+.theme-toggle-svg .sun-core {
+  r: 5px;
+}
+.theme-toggle-svg .sun-rays {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+/* Estado Dark (Luna) */
+html.dark .theme-toggle-svg {
+  transform: rotate(40deg);
+}
+html.dark .theme-toggle-svg .moon-mask-hole {
+  cx: 12px;
+  cy: 4px;
+}
+html.dark .theme-toggle-svg .sun-core {
+  r: 9px;
+}
+html.dark .theme-toggle-svg .sun-rays {
+  transform: rotate(-45deg);
+  opacity: 0;
+}

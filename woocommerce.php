@@ -68,6 +68,48 @@ html.dark .woocommerce-custom-wrapper a:hover {
     font-weight: bold;
     font-size: 1.25rem;
 }
+
+/* ── Selector de cantidad ── */
+.woocommerce-custom-wrapper .quantity input[type="number"],
+.woocommerce-custom-wrapper input.qty {
+    background-color: #FFFFFF;
+    color: #2B2B2B;
+    border: 1px solid #d1c5b8;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    width: 70px;
+    text-align: center;
+    transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+}
+html.dark .woocommerce-custom-wrapper .quantity input[type="number"],
+html.dark .woocommerce-custom-wrapper input.qty {
+    background-color: #1E1E1E !important;
+    color: #F5F2EC !important;
+    border: 1px solid #D4A65A !important;
+}
+.woocommerce-custom-wrapper .quantity input[type="number"]:focus,
+html.dark .woocommerce-custom-wrapper .quantity input[type="number"]:focus {
+    outline: none;
+    border-color: #7A4F3A !important;
+    box-shadow: 0 0 0 2px rgba(122, 79, 58, 0.2);
+}
+
+/* ── Tabla de variaciones / selects ── */
+html.dark .woocommerce-custom-wrapper select,
+html.dark .woocommerce-custom-wrapper .variations select {
+    background-color: #1E1E1E !important;
+    color: #F5F2EC !important;
+    border: 1px solid #D4A65A !important;
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
+}
+
+/* ── Meta / categorías en producto ── */
+html.dark .woocommerce-custom-wrapper .product_meta,
+html.dark .woocommerce-custom-wrapper .product_meta a {
+    color: #D4A65A;
+}
 </style>
 
 <?php get_footer(); ?>

@@ -89,8 +89,8 @@
             <!-- BRANDING LOGO -->
             <a href="<?php echo home_url('/'); ?>" class="flex flex-col items-center hover:opacity-90 transition-opacity z-10">
                 <div class="text-3xl font-bold font-title tracking-tight flex items-baseline leading-none drop-shadow-md">
-                    <span class="text-white">CustoM</span>
-                    <span class="text-custom-accent">isiones</span>
+                    <span class="text-white">CUSTOM</span>
+                    <span class="text-custom-accent">ISIONES</span>
                 </div>
                 <div class="text-[0.65rem] tracking-[0.3em] font-medium text-custom-subtext dark:text-custom-darktext/70 uppercase text-center mt-1 w-full relative flex items-center justify-center">
                     <span class="h-px bg-custom-subtext/30 flex-grow mx-2 dark:bg-custom-darktext/20"></span>
@@ -100,7 +100,7 @@
             </a>
             
             <!-- Menu Desktop -->
-            <nav class="hidden md:flex flex-grow justify-center primary-menu-nav primary-menu-nav-desktop items-center font-medium font-sans">
+            <nav class="hidden lg:flex flex-grow justify-center primary-menu-nav primary-menu-nav-desktop items-center font-medium font-sans">
                 <?php 
                 if ( has_nav_menu( 'primary' ) ) {
                     wp_nav_menu( array(
@@ -143,7 +143,7 @@
                 </button>
 
                 <!-- Hamburger Icon -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-custom-primary dark:text-custom-white rounded-md focus:outline-none focus:ring-2 focus:ring-custom-accent">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-custom-primary dark:text-custom-white rounded-md focus:outline-none focus:ring-2 focus:ring-custom-accent">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -153,7 +153,7 @@
         </div>
         
         <!-- Menu Mobile -->
-        <div id="mobile-menu" class="hidden md:hidden mt-6 pb-4 border-t border-custom-primary/10 dark:border-custom-darktext/10 pt-4 primary-menu-nav primary-menu-nav-mobile text-center font-medium font-sans">
+        <div id="mobile-menu" class="hidden lg:hidden mt-6 pb-4 border-t border-custom-primary/10 dark:border-custom-darktext/10 pt-4 primary-menu-nav primary-menu-nav-mobile text-center font-medium font-sans">
             <?php 
             if ( has_nav_menu( 'primary' ) ) {
                 wp_nav_menu( array(

@@ -1,7 +1,7 @@
-# Dependencias Node
-# node_modules/
-# npm-debug.log*
-# package-lock.json
+# Dependencias Node (solo se necesitan localmente para compilar Tailwind)
+node_modules/
+npm-debug.log*
+package-lock.json
 
 # OS
 .DS_Store

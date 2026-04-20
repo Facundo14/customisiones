@@ -115,8 +115,12 @@
                 ?>
             </nav>
 
-            <!-- Menu Right (Dark Mode Switcher & Hamburger) -->
-            <div class="flex items-center gap-2 md:gap-4 z-10">
+            <!-- Menu Right (Dark Mode Switcher, Carrito & Hamburger) -->
+            <div class="flex items-center gap-1 md:gap-2 z-10">
+
+                <!-- Ícono Carrito WooCommerce -->
+                <?php if ( class_exists( 'WooCommerce' ) ) customisiones_cart_icon_html(); ?>
+
                 <!-- Dark Mode Toggle -->
                 <button id="theme-toggle-btn" class="p-2 rounded-full hover:bg-custom-text/5 dark:hover:bg-custom-darktext/5 transition-colors text-custom-primary dark:text-custom-darktext focus:outline-none" aria-label="Toggle Dark Mode">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-toggle-svg">

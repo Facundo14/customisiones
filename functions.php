@@ -326,3 +326,65 @@ function customisiones_coming_soon_redirect() {
     }
 }
 add_action( 'template_redirect', 'customisiones_coming_soon_redirect' );
+
+// ─── TRADUCCIÓN FORZADA BLOQUES WOOCOMMERCE (JS) ───────────────────────────────
+// Los bloques de Gutenberg de WooCommerce (carrito/checkout) usan React y
+// no respetan el gettext de PHP. Este fix los traduce directamente en el DOM.
+add_action( 'wp_footer', function() {
+    if ( ! class_exists( 'WooCommerce' ) ) return;
+    ?>
+    <script>
+    (function() {
+        var translations = {
+            'Add coupons':    'Agregar cupones',
+            'Estimated total': 'Total estimado',
+            'Subtotal':        'Subtotal',
+            'Shipping':        'Envío',
+            'Tax':             'Impuestos',
+            'Total':           'Total',
+            'Remove item':     'Eliminar artículo',
+            'Coupon code':     'Código de cupón',
+            'Apply coupon':    'Aplicar cupón',
+            'Place order':     'Realizar pedido',
+            'Proceed to checkout': 'Finalizar compra',
+        };
+
+        function translateNode(node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+                var txt = node.textContent.trim();
+                if (translations[txt]) {
+                    node.textContent = node.textContent.replace(txt, translations[txt]);
+                }
+            }
+        }
+
+        function translateAll() {
+            // Selectores específicos de WooCommerce blocks
+            var selectors = [
+                '.wc-block-components-panel__button',
+                '.wc-block-components-totals-item__label',
+                '.wc-block-components-totals-footer-item .wc-block-components-totals-item__label',
+                '.wc-block-cart__submit-button',
+                '.wc-block-components-checkout-place-order-button',
+                '.wp-block-woocommerce-proceed-to-checkout-block a',
+            ];
+            selectors.forEach(function(sel) {
+                document.querySelectorAll(sel).forEach(function(el) {
+                    el.childNodes.forEach(translateNode);
+                    if (translations[el.textContent.trim()]) {
+                        el.textContent = translations[el.textContent.trim()];
+                    }
+                });
+            });
+        }
+
+        // Ejecutar al cargar y observar cambios del DOM (bloques React se renderizan después)
+        document.addEventListener('DOMContentLoaded', function() {
+            translateAll();
+            var observer = new MutationObserver(translateAll);
+            observer.observe(document.body, { childList: true, subtree: true, characterData: false });
+        });
+    })();
+    </script>
+    <?php
+} );
